@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='sudoku.css') }}">
+
+</head>
+<body>
+    <div class="holder1">
+        <div class="holder">
+            {% for i in range(9) %}
+                {% for j in range(9) %}
+                    {% if i % 3 == 2 and j % 3 == 2 and i != 8 and j != 8 %}
+                        <div class="sudoku-cell-with-right-thick sudoku-cell-with-bottom-thick" id="{{ i * 9 + j + 1 }}">{{ initial_table[i][j] }}</div>
+                    {% elif j % 3 == 2 and j != 8 %}
+                        <div class="sudoku-cell-with-right-thick" id="{{ i * 9 + j + 1 }}">{{ initial_table[i][j] }}</div>
+                    {% elif i % 3 == 2 and i != 8 %}
+                        <div class="sudoku-cell-with-bottom-thick sudoku-cell" id="{{ i * 9 + j + 1 }}">{{ initial_table[i][j] }}</div>
+                    {% else %}
+                        <div class="sudoku-cell" id="{{ i * 9 + j + 1 }}">{{ initial_table[i][j] }}</div>
+                    {% endif %}
+                {% endfor %}
+                <div></div>
+            {% endfor %}
+        </div>
+        <button id="new-game-button">New game</button>
+    </div>
+    <script src="{{ url_for('static', filename='sudoku.js') }}"></script>
+</body>
+</html>

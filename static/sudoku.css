@@ -1,0 +1,43 @@
+.sudoku-cell {
+    display: inline-block;
+    border: 1px solid;
+    height: 25px;
+    width: 25px;
+    margin-left: -4px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sudoku-cell-with-right-thick {
+    display: inline-block;
+    border: 1px solid;
+    border-right-width: 2px;
+    height: 25px;
+    width: 25px;
+    margin-left: -4px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sudoku-cell-with-bottom-thick {
+    display: inline-block;
+    /*border: 1px solid;*/
+    border-bottom-width: 2px;
+    height: 25px;
+    width: 25px;
+    margin-left: -4px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sudoku-cell:hover, .sudoku-cell-with-right-thick:hover,
+.sudoku-cell-with-bottom-thick:hover {
+    background-color: #fafa8e;
+}
+
+.holder1 {
+     position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
